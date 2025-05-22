@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elosaúde</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Incorporated Profile Banner (Hidden by default) -->
+        <div class="incorporated-profile-banner">
+            <span>Você está visualizando como Olívia</span>
+            <button class="return-profile-btn">Voltar ao meu perfil</button>
+        </div>
+
+        <!-- Header -->
+        <header class="header">
+            <div class="greeting">
+                <h1>Olá, Victor</h1>
+            </div>
+            <div class="header-icons">
+                <div class="notification-icon">
+                    <i class="fas fa-bell"></i>
+                    <span class="notification-badge">3</span>
+                </div>
+                <div class="profile-icon">
+                    <i class="fas fa-user"></i>
+                </div>
+            </div>
+        </header>
+
+        <!-- Profile Menu (Hidden by default) -->
+        <div class="profile-menu" id="profileMenu">
+            <div class="profile-menu-item">
+                <i class="fas fa-cog"></i>
+                <span>Configurações</span>
+            </div>
+            <div class="profile-menu-item" id="incorporateProfileBtn">
+                <i class="fas fa-user-friends"></i>
+                <span>Incorporar perfil</span>
+            </div>
+            <div class="profile-menu-item">
+                <i class="fas fa-sign-out-alt"></i>
+                <span>Sair</span>
+            </div>
+        </div>
+
+        <!-- Card Section -->
+        <section class="card-section">
+            <div class="card">
+                <div class="logo">
+                    <img src="assets/images/elosaude-logo.png" alt="Elosaúde Logo">
+                </div>
+                <div class="card-button">
+                    <button id="viewCardBtn">
+                        <i class="fas fa-id-card"></i> Ver carteirinha
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section class="services-section">
+            <h2>Serviços</h2>
+            <div class="services-grid">
+                <div class="service-item">
+                    <div class="service-icon document-icon">
+                        <i class="fas fa-file-alt"></i>
+                    </div>
+                    <span>Extrato de Utilização</span>
+                    <i class="fas fa-chevron-right"></i>
+                </div>
+                <div class="service-item">
+                    <div class="service-icon bill-icon">
+                        <i class="fas fa-file-invoice-dollar"></i>
+                    </div>
+                    <span>Boletos</span>
+                    <i class="fas fa-chevron-right"></i>
+                </div>
+                <div class="service-item">
+                    <div class="service-icon copay-icon">
+                        <i class="fas fa-percentage"></i>
+                    </div>
+                    <span>Coparticipação</span>
+                    <i class="fas fa-chevron-right"></i>
+                </div>
+                <div class="service-item">
+                    <div class="service-icon debt-icon">
+                        <i class="fas fa-hand-holding-usd"></i>
+                    </div>
+                    <span>Negociação de Dívidas</span>
+                    <i class="fas fa-chevron-right"></i>
+                </div>
+                <div class="service-item">
+                    <div class="service-icon beneficiary-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <span>Inclusão de Beneficiários</span>
+                    <i class="fas fa-chevron-right"></i>
+                </div>
+                <div class="service-item">
+                    <div class="service-icon prescription-icon">
+                        <i class="fas fa-prescription"></i>
+                    </div>
+                    <span>Receitas</span>
+                    <i class="fas fa-chevron-right"></i>
+                </div>
+                <div class="service-item">
+                    <div class="service-icon points-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <span>Sistema de Pontuação</span>
+                    <i class="fas fa-chevron-right"></i>
+                </div>
+                <div class="service-item">
+                    <div class="service-icon schedule-icon">
+                        <i class="fas fa-calendar-alt"></i>
+                    </div>
+                    <span>Agendamento</span>
+                    <i class="fas fa-chevron-right"></i>
+                </div>
+                <div class="service-item">
+                    <div class="service-icon reimbursement-icon">
+                        <i class="fas fa-money-bill-wave"></i>
+                    </div>
+                    <span>Reembolso</span>
+                    <i class="fas fa-chevron-right"></i>
+                </div>
+                <div class="service-item">
+                    <div class="service-icon health-icon">
+                        <i class="fas fa-heartbeat"></i>
+                    </div>
+                    <span>Saúde e Bem-estar</span>
+                    <i class="fas fa-chevron-right"></i>
+                </div>
+            </div>
+        </section>
+
+        <!-- Card Viewer Modal (Hidden by default) -->
+        <div class="modal" id="cardViewerModal">
+            <div class="modal-content card-viewer-content">
+                <div class="modal-header">
+                    <h2>Carteirinha</h2>
+                    <span class="close-modal">&times;</span>
+                </div>
+                <div class="modal-body">
+                    <div class="card-carousel">
+                        <div class="card-carousel-container">
+                            <!-- Elosaúde Card -->
+                            <div class="health-card elosaude-card">
+                                <div class="card-header">
+                                    <div class="card-logo">Elosaúde</div>
+                                    <div class="card-type">SAÚDE</div>
+                                </div>
+                                <div class="card-body">
+                                    <div class="card-info">
+                                        <div class="info-row">
+                                            <div class="info-label">Nome:</div>
+                                            <div class="info-value">Victor Silva</div>
+                                        </div>
+                                        <div class="info-row">
+                                            <div class="info-label">Cartão:</div>
+                                            <div class="info-value">ELO-123456</div>
+                                        </div>
+                                        <div class="info-row">
+                                            <div class="info-label">Plano:</div>
+                                            <div class="info-value">PREMIUM</div>
+                                        </div>
+                                        <div class="info-row">
+                                            <div class="info-label">Validade:</div>
+                                            <div class="info-value">INDETERMINADA</div>
+                                        </div>
+                                    </div>
+                                    <div class="card-qr">
+                                        <img src="assets/images/qr-code.png" alt="QR Code">
+                                    </div>
+                                </div>
+                                <div class="card-footer">
+                                    Em caso de dúvidas, entre em contato: (48) 3333-4444
+                                </div>
+                            </div>
+                            
+                            <!-- Unimed Card -->
+                            <div class="health-card unimed-card">
+                                <div class="card-header">
+                                    <div class="card-logo">Unimed</div>
+                                    <div class="card-type">SAÚDE</div>
+                                </div>
+                                <div class="card-body">
+                                    <div class="card-info">
+                                        <div class="info-row">
+                                            <div class="info-label">Nome:</div>
+                                            <div class="info-value">Victor Silva</div>
+                                        </div>
+                                        <div class="info-row">
+                                            <div class="info-label">Cartão:</div>
+                                            <div class="info-value">UNI-789012</div>
+                                        </div>
+                                        <div class="info-row">
+                                            <div class="info-label">Plano:</div>
+                                            <div class="info-value">NACIONAL</div>
+                                        </div>
+                                        <div class="info-row">
+                                            <div class="info-label">Validade:</div>
+                                            <div class="info-value">INDETERMINADA</div>
+                                        </div>
+                                    </div>
+                                    <div class="card-qr">
+                                        <img src="assets/images/qr-code.png" alt="QR Code">
+                                    </div>
+                                </div>
+                                <div class="card-footer">
+                                    Em caso de dúvidas, entre em contato: (48) 5555-6666
+                                </div>
+                            </div>
+                            
+                            <!-- Uniodonto Card -->
+                            <div class="health-card uniodonto-card">
+                                <div class="card-header">
+                                    <div class="card-logo">Uniodonto</div>
+                                    <div class="card-type">ODONTO</div>
+                                </div>
+                                <div class="card-body">
+                                    <div class="card-info">
+                                        <div class="info-row">
+                                            <div class="info-label">Nome:</div>
+                                            <div class="info-value">Victor Silva</div>
+                                        </div>
+                                        <div class="info-row">
+                                            <div class="info-label">Cartão:</div>
+                                            <div class="info-value">ODO-345678</div>
+                                        </div>
+                                        <div class="info-row">
+                                            <div class="info-label">Plano:</div>
+                                            <div class="info-value">COMPLETO</div>
+                                        </div>
+                                        <div class="info-row">
+                                            <div class="info-label">Validade:</div>
+                                            <div class="info-value">INDETERMINADA</div>
+                                        </div>
+                                    </div>
+                                    <div class="card-qr">
+                                        <img src="assets/images/qr-code.png" alt="QR Code">
+                                    </div>
+                                </div>
+                                <div class="card-footer">
+                                    Em caso de dúvidas, entre em contato: (48) 7777-8888
+                                </div>
+                            </div>
+                            
+                            <!-- Funcional Card -->
+                            <div class="health-card funcional-card">
+                                <div class="card-header">
+                                    <div class="card-logo">Funcional</div>
+                                    <div class="card-type">FARMÁCIA</div>
+                                </div>
+                                <div class="card-body">
+                                    <div class="card-info">
+                                        <div class="info-row">
+                                            <div class="info-label">Nome:</div>
+                                            <div class="info-value">Victor Silva</div>
+                                        </div>
+                                        <div class="info-row">
+                                            <div class="info-label">Cartão:</div>
+                                            <div class="info-value">FUN-901234</div>
+                                        </div>
+                                        <div class="info-row">
+                                            <div class="info-label">Plano:</div>
+                                            <div class="info-value">DESCONTO</div>
+                                        </div>
+                                        <div class="info-row">
+                                            <div class="info-label">Validade:</div>
+                                            <div class="info-value">INDETERMINADA</div>
+                                        </div>
+                                    </div>
+                                    <div class="card-qr">
+                                        <img src="assets/images/qr-code.png" alt="QR Code">
+                                    </div>
+                                </div>
+                                <div class="card-footer">
+                                    Em caso de dúvidas, entre em contato: (48) 3333-7777
+                                </div>
+                            </div>
+                            
+                            <!-- VIVEST Card -->
+                            <div class="health-card vivest-card">
+                                <div class="card-header">
+                                    <div class="card-logo">VIVEST</div>
+                                    <div class="card-type">BENEFÍCIOS</div>
+                                </div>
+                                <div class="card-body">
+                                    <div class="card-info">
+                                        <div class="info-row">
+                                            <div class="info-label">Nome:</div>
+                                            <div class="info-value">Victor Silva</div>
+                                        </div>
+                                        <div class="info-row">
+                                            <div class="info-label">Cartão:</div>
+                                            <div class="info-value">VIV-567890</div>
+                                        </div>
+                                        <div class="info-row">
+                                            <div class="info-label">Plano:</div>
+                                            <div class="info-value">PREMIUM</div>
+                                        </div>
+                                        <div class="info-row">
+                                            <div class="info-label">Validade:</div>
+                                            <div class="info-value">INDETERMINADA</div>
+                                        </div>
+                                    </div>
+                                    <div class="card-qr">
+                                        <img src="assets/images/qr-code.png" alt="QR Code">
+                                    </div>
+                                </div>
+                                <div class="card-footer">
+                                    Em caso de dúvidas, entre em contato: (48) 9999-0000
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="carousel-indicators">
+                        <div class="indicator active"></div>
+                        <div class="indicator"></div>
+                        <div class="indicator"></div>
+                        <div class="indicator"></div>
+                        <div class="indicator"></div>
+                    </div>
+                    
+                    <div class="carousel-controls">
+                        <button class="carousel-control prev-btn">
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+                        <button class="carousel-control next-btn">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Points Modal (Hidden by default) -->
+        <div class="modal" id="pointsModal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2>Sistema de Pontuação</h2>
+                    <span class="close-modal">&times;</span>
+                </div>
+                <div class="modal-body">
+                    <div class="points-summary">
+                        <div class="total-points">
+                            <h3>Seus pontos acumulados</h3>
+                            <div class="points-value">350</div>
+                        </div>
+                        <div class="points-actions">
+                            <button class="primary-button">Resgatar</button>
+                            <button class="secondary-button">Como ganhar mais</button>
+                        </div>
+                    </div>
+                    
+                    <div class="points-history">
+                        <h3>Histórico de pontos</h3>
+                        <div class="history-item">
+                            <div class="history-icon plus">
+                                <i class="fas fa-plus"></i>
+                            </div>
+                            <div class="history-details">
+                                <div class="history-title">Consulta via Conexa</div>
+                                <div class="history-date">15/05/2025</div>
+                            </div>
+                            <div class="history-points plus">+50</div>
+                        </div>
+                        <div class="history-item">
+                            <div class="history-icon plus">
+                                <i class="fas fa-plus"></i>
+                            </div>
+                            <div class="history-details">
+                                <div class="history-title">Pagamento de boleto em dia</div>
+                                <div class="history-date">10/05/2025</div>
+                            </div>
+                            <div class="history-points plus">+5</div>
+                        </div>
+                        <div class="history-item">
+                            <div class="history-icon plus">
+                                <i class="fas fa-plus"></i>
+                            </div>
+                            <div class="history-details">
+                                <div class="history-title">Uso da rede própria</div>
+                                <div class="history-date">05/05/2025</div>
+                            </div>
+                            <div class="history-points plus">+10</div>
+                        </div>
+                        <div class="history-item">
+                            <div class="history-icon minus">
+                                <i class="fas fa-minus"></i>
+                            </div>
+                            <div class="history-details">
+                                <div class="history-title">Resgate - Desconto em consulta</div>
+                                <div class="history-date">01/05/2025</div>
+                            </div>
+                            <div class="history-points minus">-100</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Reimbursement Modal (Hidden by default) -->
+        <div class="modal" id="reimbursementModal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2>Reembolso</h2>
+                    <span class="close-modal">&times;</span>
+                </div>
+                <div class="modal-body">
+                    <p>O reembolso é para você ou para seu dependente?</p>
+                    <div class="reimbursement-options">
+                        <button class="primary-button" id="forMeBtn">Para mim</button>
+                        <button class="secondary-button" id="forDependentBtn">Para meu dependente</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Procedure Type Modal (Hidden by default) -->
+        <div class="modal" id="procedureTypeModal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2>Tipo de Procedimento</h2>
+                    <span class="close-modal">&times;</span>
+                </div>
+                <div class="modal-body">
+                    <p>Qual tipo de procedimento deseja solicitar?</p>
+                    <div class="procedure-options">
+                        <div class="procedure-option" id="medicalConsultBtn">
+                            <div class="procedure-icon">
+                                <i class="fas fa-user-md"></i>
+                            </div>
+                            <span>Consulta médica</span>
+                        </div>
+                        <div class="procedure-option" id="medicationBtn">
+                            <div class="procedure-icon">
+                                <i class="fas fa-pills"></i>
+                            </div>
+                            <span>Medicamento</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Reimbursement Form Modal (Hidden by default) -->
+        <div class="modal" id="reimbursementFormModal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2>Solicitar Reembolso</h2>
+                    <span class="close-modal">&times;</span>
+                </div>
+                <div class="modal-body">
+                    <div class="alert warning" id="prescriptionAlert" style="display: none;">
+                        <i class="fas fa-exclamation-triangle"></i>
+                        <div>
+                            <strong>Atenção!</strong> A receita do Fentanil vence em 5 dias. Por favor, renove sua receita.
+                        </div>
+                    </div>
+                    
+                    <form id="reimbursementForm">
+                        <div class="form-group">
+                            <label>Tipo de procedimento</label>
+                            <div id="procedureTypeLabel">Consulta Médica</div>
+                        </div>
+                        <div class="form-group">
+                            <label for="invoiceUpload">Nota/cupom fiscal</label>
+                            <div class="file-upload">
+                                <button type="button" class="upload-btn">
+                                    <i class="fas fa-upload"></i> Anexar arquivo
+                                </button>
+                                <span class="file-name">Nenhum arquivo selecionado</span>
+                            </div>
+                        </div>
+                        <div class="form-group" id="prescriptionGroup">
+                            <label for="prescriptionUpload">Receita médica</label>
+                            <div class="file-upload">
+                                <button type="button" class="upload-btn">
+                                    <i class="fas fa-upload"></i> Anexar arquivo
+                                </button>
+                                <span class="file-name">Nenhum arquivo selecionado</span>
+                            </div>
+                        </div>
+                        <div class="form-actions">
+                            <button type="button" class="secondary-button" id="backToProcedureBtn">Voltar</button>
+                            <button type="submit" class="primary-button">Enviar solicitação</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Health & Wellness Modal (Hidden by default) -->
+        <div class="modal" id="healthWellnessModal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2>Saúde e Bem-estar</h2>
+                    <span class="close-modal">&times;</span>
+                </div>
+                <div class="modal-body">
+                    <div class="health-options">
+                        <div class="health-option" id="healthDiaryBtn">
+                            <div class="health-option-icon">
+                                <i class="fas fa-book-medical"></i>
+                            </div>
+                            <span>Diário de saúde</span>
+                        </div>
+                        <div class="health-option" id="medicationsBtn">
+                            <div class="health-option-icon">
+                                <i class="fas fa-pills"></i>
+                            </div>
+                            <span>Medicamentos</span>
+                        </div>
+                        <div class="health-option" id="vaccinesBtn">
+                            <div class="health-option-icon">
+                                <i class="fas fa-syringe"></i>
+                            </div>
+                            <span>Vacinas</span>
+                        </div>
+                        <div class="health-option" id="labExamsBtn">
+                            <div class="health-option-icon">
+                                <i class="fas fa-vial"></i>
+                            </div>
+                            <span>Exames laboratoriais</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Health Diary Modal (Hidden by default) -->
+        <div class="modal" id="healthDiaryModal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2>Diário de Saúde</h2>
+                    <span class="close-modal">&times;</span>
+                </div>
+                <div class="modal-body">
+                    <div class="health-diary-options">
+                        <div class="health-diary-option" data-type="pressure">
+                            <div class="health-option-icon">
+                                <i class="fas fa-heartbeat"></i>
+                            </div>
+                            <div class="health-option-info">
+                                <h3>Pressão</h3>
+                                <p>Último registro: 120/80 (20/05/2025)</p>
+                            </div>
+                        </div>
+                        <div class="health-diary-option" data-type="glucose">
+                            <div class="health-option-icon">
+                                <i class="fas fa-tint"></i>
+                            </div>
+                            <div class="health-option-info">
+                                <h3>Glicose</h3>
+                                <p>Último registro: 95 mg/dL (19/05/2025)</p>
+                            </div>
+                        </div>
+                        <div class="health-diary-option" data-type="heartRate">
+                            <div class="health-option-icon">
+                                <i class="fas fa-heart"></i>
+                            </div>
+                            <div class="health-option-info">
+                                <h3>Freq. Cardíaca</h3>
+                                <p>Último registro: 72 bpm (18/05/2025)</p>
+                            </div>
+                        </div>
+                        <div class="health-diary-option" data-type="imc">
+                            <div class="health-option-icon">
+                                <i class="fas fa-weight"></i>
+                            </div>
+                            <div class="health-option-info">
+                                <h3>IMC</h3>
+                                <p>Último registro: 22.5 (17/05/2025)</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="diary-form" id="diaryFormContainer" style="display: none;">
+                        <h3 id="diaryFormTitle">Registrar Pressão</h3>
+                        <form id="healthDiaryForm">
+                            <div class="form-group" id="pressureGroup">
+                                <label for="systolicValue">Sistólica</label>
+                                <input type="text" id="systolicValue" placeholder="Ex: 120">
+                                <label for="diastolicValue">Diastólica</label>
+                                <input type="text" id="diastolicValue" placeholder="Ex: 80">
+                            </div>
+                            <div class="form-group" id="glucoseGroup" style="display: none;">
+                                <label for="glucoseValue">Valor (mg/dL)</label>
+                                <input type="text" id="glucoseValue" placeholder="Ex: 95">
+                            </div>
+                            <div class="form-group" id="heartRateGroup" style="display: none;">
+                                <label for="heartRateValue">Valor (bpm)</label>
+                                <input type="text" id="heartRateValue" placeholder="Ex: 72">
+                            </div>
+                            <div class="form-group" id="imcGroup" style="display: none;">
+                                <label for="weightValue">Peso (kg)</label>
+                                <input type="text" id="weightValue" placeholder="Ex: 70">
+                                <label for="heightValue">Altura (m)</label>
+                                <input type="text" id="heightValue" placeholder="Ex: 1.75">
+                            </div>
+                            <div class="form-group">
+                                <label for="recordDate">Data</label>
+                                <input type="date" id="recordDate">
+                            </div>
+                            <div class="form-actions">
+                                <button type="button" class="secondary-button cancel-diary-btn">Cancelar</button>
+                                <button type="submit" class="primary-button">Salvar</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Medications Modal (Hidden by default) -->
+        <div class="modal" id="medicationsModal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2>Medicamentos</h2>
+                    <span class="close-modal">&times;</span>
+                </div>
+                <div class="modal-body">
+                    <div class="medication-list">
+                        <div class="medication-item">
+                            <span>Engov</span>
+                            <button class="icon-button delete-btn"><i class="fas fa-trash"></i></button>
+                        </div>
+                        <div class="medication-item">
+                            <span>Epocler</span>
+                            <button class="icon-button delete-btn"><i class="fas fa-trash"></i></button>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="newMedication">Adicionar novo medicamento</label>
+                        <div class="input-with-button">
+                            <input type="text" id="newMedication" placeholder="Nome do medicamento">
+                            <button class="primary-button add-med-btn">Adicionar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Vaccines Modal (Hidden by default) -->
+        <div class="modal" id="vaccinesModal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2>Vacinas</h2>
+                    <span class="close-modal">&times;</span>
+                </div>
+                <div class="modal-body">
+                    <div class="vaccine-list">
+                        <div class="vaccine-item">
+                            <div>
+                                <h4>COVID-19 (Reforço)</h4>
+                                <p>Data: 10/01/2025</p>
+                            </div>
+                            <button class="icon-button view-attachment-btn"><i class="fas fa-paperclip"></i></button>
+                        </div>
+                    </div>
+                    <button class="primary-button add-vaccine-btn">Incluir Vacina</button>
+                    <div class="vaccine-form" id="vaccineFormContainer" style="display: none;">
+                        <h3>Incluir Nova Vacina</h3>
+                        <form id="vaccineForm">
+                            <div class="form-group">
+                                <label for="vaccineName">Nome da Vacina</label>
+                                <input type="text" id="vaccineName" placeholder="Ex: Gripe">
+                            </div>
+                            <div class="form-group">
+                                <label for="vaccineDate">Data de Aplicação</label>
+                                <input type="date" id="vaccineDate">
+                            </div>
+                            <div class="form-group">
+                                <label>Comprovante</label>
+                                <div class="file-upload">
+                                    <button type="button" class="upload-btn">
+                                        <i class="fas fa-upload"></i> Anexar arquivo
+                                    </button>
+                                    <span class="file-name">Nenhum arquivo selecionado</span>
+                                </div>
+                            </div>
+                            <div class="form-actions">
+                                <button type="button" class="secondary-button cancel-vaccine-btn">Cancelar</button>
+                                <button type="submit" class="primary-button">Salvar Vacina</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Lab Exams Modal (Hidden by default) -->
+        <div class="modal" id="labExamsModal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2>Exames Laboratoriais</h2>
+                    <span class="close-modal">&times;</span>
+                </div>
+                <div class="modal-body">
+                    <div class="exam-list">
+                        <div class="exam-item">
+                            <div>
+                                <h4>Hemograma Completo</h4>
+                                <p>Data: 15/04/2025</p>
+                            </div>
+                            <button class="icon-button view-pdf-btn"><i class="fas fa-file-pdf"></i></button>
+                        </div>
+                    </div>
+                    <button class="primary-button add-exam-btn">Anexar Exame</button>
+                    <div class="exam-form" id="examFormContainer" style="display: none;">
+                        <h3>Anexar Novo Exame</h3>
+                        <form id="examForm">
+                            <div class="form-group">
+                                <label for="examName">Nome do Exame</label>
+                                <input type="text" id="examName" placeholder="Ex: Colesterol Total">
+                            </div>
+                            <div class="form-group">
+                                <label for="examDate">Data de Realização</label>
+                                <input type="date" id="examDate">
+                            </div>
+                            <div class="form-group">
+                                <label>Resultado (PDF)</label>
+                                <div class="file-upload">
+                                    <button type="button" class="upload-btn">
+                                        <i class="fas fa-upload"></i> Anexar PDF
+                                    </button>
+                                    <span class="file-name">Nenhum arquivo selecionado</span>
+                                </div>
+                            </div>
+                            <div class="form-actions">
+                                <button type="button" class="secondary-button cancel-exam-btn">Cancelar</button>
+                                <button type="submit" class="primary-button">Salvar Exame</button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="integrated-results" style="margin-top: 20px;">
+                        <h4>Resultados Integrados (Exemplo)</h4>
+                        <div class="exam-item">
+                            <div>
+                                <h4>Glicemia de Jejum</h4>
+                                <p>Data: 10/05/2025 - Laboratório Parceiro</p>
+                                <p>Resultado: 98 mg/dL (Normal)</p>
+                            </div>
+                            <button class="icon-button view-details-btn"><i class="fas fa-eye"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Navigation Bar -->
+        <nav class="nav-bar">
+            <div class="nav-item active">
+                <i class="fas fa-home"></i>
+                <span>Início</span>
+            </div>
+            <div class="nav-item">
+                <i class="fas fa-dollar-sign"></i>
+                <span>Financeiro</span>
+            </div>
+        </nav>
+    </div>
+
+    <script src="assets/js/script.js"></script>
+</body>
+</html>
