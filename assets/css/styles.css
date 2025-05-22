@@ -1,0 +1,1075 @@
+:root {
+    --primary-color: #1EB5A5; /* Cor verde exata do logo Elosaúde */
+    --primary-dark: #189A8C;
+    --primary-light: #7EDECB;
+    --secondary-color: #3498DB;
+    --accent-color: #F39C12;
+    --text-color: #333333;
+    --text-light: #666666;
+    --background-color: #F5F7FA;
+    --card-color: #FFFFFF;
+    --border-color: #E1E5EA;
+    --success-color: #2ECC71;
+    --warning-color: #F1C40F;
+    --danger-color: #E74C3C;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --border-radius: 12px;
+    --transition: all 0.3s ease;
+    
+    /* Card Colors */
+    --elosaude-color: #1EB5A5;
+    --unimed-color: #00995D;
+    --uniodonto-color: #0072CE;
+    --funcional-color: #4A5FE9;
+    --vivest-color: #8A2BE2;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+.app-container {
+    max-width: 480px;
+    margin: 0 auto;
+    min-height: 100vh;
+    position: relative;
+    background-color: var(--background-color);
+    padding-bottom: 70px; /* Espaço para a barra de navegação */
+    overflow-x: hidden;
+}
+
+/* Header Styles */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: var(--card-color);
+    box-shadow: var(--shadow);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.greeting h1 {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.header-icons {
+    display: flex;
+    gap: 15px;
+}
+
+.notification-icon, .profile-icon {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--background-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.notification-icon:hover, .profile-icon:hover {
+    background-color: var(--primary-light);
+}
+
+.notification-badge {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background-color: var(--danger-color);
+    color: white;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.7rem;
+    font-weight: bold;
+}
+
+/* Profile Menu */
+.profile-menu {
+    position: absolute;
+    top: 70px;
+    right: 20px;
+    background-color: var(--card-color);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    width: 200px;
+    z-index: 101;
+    display: none;
+}
+
+.profile-menu.active {
+    display: block;
+    animation: fadeIn 0.3s ease;
+}
+
+.profile-menu-item {
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.profile-menu-item:hover {
+    background-color: var(--background-color);
+}
+
+.profile-menu-item i {
+    color: var(--primary-color);
+}
+
+/* Card Section */
+.card-section {
+    padding: 20px;
+}
+
+.card {
+    background-color: var(--card-color);
+    border-radius: var(--border-radius);
+    padding: 20px;
+    box-shadow: var(--shadow);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.logo {
+    width: 150px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.card-button button {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 30px;
+    padding: 12px 30px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.card-button button:hover {
+    background-color: var(--primary-dark);
+    transform: translateY(-2px);
+}
+
+/* Services Section */
+.services-section {
+    padding: 20px;
+}
+
+.services-section h2 {
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+.services-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.service-item {
+    background-color: var(--card-color);
+    border-radius: var(--border-radius);
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    box-shadow: var(--shadow);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.service-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.service-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 15px;
+    color: white;
+}
+
+.document-icon {
+    background-color: #3498DB;
+}
+
+.bill-icon {
+    background-color: #9B59B6;
+}
+
+.copay-icon {
+    background-color: #E74C3C;
+}
+
+.debt-icon {
+    background-color: #F39C12;
+}
+
+.beneficiary-icon {
+    background-color: #1ABC9C;
+}
+
+.prescription-icon {
+    background-color: #2ECC71;
+}
+
+.points-icon {
+    background-color: #F1C40F;
+}
+
+.schedule-icon {
+    background-color: #34495E;
+}
+
+.reimbursement-icon {
+    background-color: #16A085;
+}
+
+.health-icon {
+    background-color: #E67E22;
+}
+
+.service-item span {
+    flex-grow: 1;
+    font-weight: 500;
+}
+
+.service-item i.fa-chevron-right {
+    color: var(--text-light);
+}
+
+/* Navigation Bar */
+.nav-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: var(--card-color);
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 0;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 100;
+    max-width: 480px;
+    margin: 0 auto;
+}
+
+.nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5px 0;
+    cursor: pointer;
+    transition: var(--transition);
+    color: var(--text-light);
+}
+
+.nav-item.active {
+    color: var(--primary-color);
+}
+
+.nav-item i {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+}
+
+.nav-item span {
+    font-size: 0.8rem;
+}
+
+/* Modal Styles */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal.active {
+    display: flex;
+    animation: fadeIn 0.3s ease;
+}
+
+.modal-content {
+    background-color: var(--card-color);
+    border-radius: var(--border-radius);
+    width: 90%;
+    max-width: 450px;
+    max-height: 85vh;
+    overflow-y: auto;
+    box-shadow: var(--shadow);
+}
+
+.modal-header {
+    padding: 15px 20px;
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    background-color: var(--card-color);
+    z-index: 10;
+}
+
+.modal-header h2 {
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+.close-modal {
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--text-light);
+    transition: var(--transition);
+}
+
+.close-modal:hover {
+    color: var(--danger-color);
+}
+
+.modal-body {
+    padding: 20px;
+}
+
+/* Card Viewer Modal */
+.card-viewer-content {
+    max-width: 480px;
+}
+
+.card-carousel {
+    position: relative;
+    overflow: hidden;
+    border-radius: var(--border-radius);
+    margin-bottom: 20px;
+}
+
+.card-carousel-container {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.health-card {
+    min-width: 100%;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+}
+
+.elosaude-card {
+    background: linear-gradient(135deg, var(--elosaude-color) 0%, #4ADCBF 100%);
+    color: white;
+}
+
+.unimed-card {
+    background: linear-gradient(135deg, var(--unimed-color) 0%, #33CC99 100%);
+    color: white;
+}
+
+.uniodonto-card {
+    background: linear-gradient(135deg, var(--uniodonto-color) 0%, #3399FF 100%);
+    color: white;
+}
+
+.funcional-card {
+    background: linear-gradient(135deg, var(--funcional-color) 0%, #7B8CFF 100%);
+    color: white;
+}
+
+.vivest-card {
+    background: linear-gradient(135deg, var(--vivest-color) 0%, #9370DB 100%);
+    color: white;
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.card-logo {
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.card-type {
+    font-weight: 600;
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.card-body {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.card-info {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.info-row {
+    display: flex;
+    align-items: center;
+}
+
+.info-label {
+    width: 100px;
+    font-weight: 500;
+}
+
+.info-value {
+    font-weight: 600;
+}
+
+.card-qr {
+    display: flex;
+    justify-content: center;
+    margin: 10px 0;
+}
+
+.card-qr img {
+    width: 120px;
+    height: 120px;
+    background-color: white;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.card-footer {
+    background-color: rgba(0, 0, 0, 0.1);
+    padding: 10px 15px;
+    font-size: 0.8rem;
+    text-align: center;
+}
+
+.carousel-indicators {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 15px;
+}
+
+.indicator {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: var(--border-color);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.indicator.active {
+    background-color: var(--primary-color);
+    transform: scale(1.2);
+}
+
+.carousel-controls {
+    display: flex;
+    justify-content: space-between;
+}
+
+.carousel-control {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.carousel-control:hover {
+    background-color: var(--primary-dark);
+}
+
+/* Reimbursement Modal */
+.reimbursement-options {
+    display: flex;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.primary-button, .secondary-button {
+    padding: 12px 20px;
+    border-radius: 30px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: var(--transition);
+    border: none;
+    font-size: 1rem;
+}
+
+.primary-button {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.primary-button:hover {
+    background-color: var(--primary-dark);
+}
+
+.secondary-button {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
+}
+
+.secondary-button:hover {
+    background-color: var(--border-color);
+}
+
+/* Procedure Options */
+.procedure-options {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.procedure-option {
+    flex: 1;
+    background-color: var(--background-color);
+    border-radius: var(--border-radius);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    cursor: pointer;
+    transition: var(--transition);
+    text-align: center;
+}
+
+.procedure-option:hover {
+    background-color: var(--primary-light);
+    transform: translateY(-5px);
+}
+
+.procedure-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: var(--primary-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 1.5rem;
+}
+
+/* Form Styles */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+    transition: var(--transition);
+}
+
+.form-group input:focus {
+    border-color: var(--primary-color);
+    outline: none;
+    box-shadow: 0 0 0 2px var(--primary-light);
+}
+
+.file-upload {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.upload-btn {
+    background-color: var(--background-color);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.upload-btn:hover {
+    background-color: var(--border-color);
+}
+
+.file-name {
+    color: var(--text-light);
+    font-size: 0.9rem;
+}
+
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+/* Alert Styles */
+.alert {
+    padding: 15px;
+    border-radius: var(--border-radius);
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.alert.warning {
+    background-color: rgba(241, 196, 15, 0.2);
+    border-left: 4px solid var(--warning-color);
+}
+
+.alert.warning i {
+    color: var(--warning-color);
+}
+
+/* Points Modal */
+.points-summary {
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: var(--border-radius);
+    padding: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.total-points h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.points-value {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.points-actions {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.points-actions .primary-button {
+    background-color: white;
+    color: var(--primary-color);
+}
+
+.points-actions .primary-button:hover {
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+.points-actions .secondary-button {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.points-actions .secondary-button:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+.points-history h3 {
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+}
+
+.history-item {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.history-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 15px;
+    color: white;
+}
+
+.history-icon.plus {
+    background-color: var(--success-color);
+}
+
+.history-icon.minus {
+    background-color: var(--danger-color);
+}
+
+.history-details {
+    flex-grow: 1;
+}
+
+.history-title {
+    font-weight: 500;
+}
+
+.history-date {
+    font-size: 0.8rem;
+    color: var(--text-light);
+}
+
+.history-points {
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+.history-points.plus {
+    color: var(--success-color);
+}
+
+.history-points.minus {
+    color: var(--danger-color);
+}
+
+/* Incorporate Profile Modal */
+.profile-option {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 15px;
+    border-radius: var(--border-radius);
+    background-color: var(--background-color);
+    margin-bottom: 15px;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.profile-option:hover {
+    background-color: var(--primary-light);
+}
+
+.profile-option img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.profile-option h3 {
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+}
+
+.profile-option p {
+    font-size: 0.9rem;
+    color: var(--text-light);
+}
+
+/* Health & Wellness Styles */
+.health-options {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.health-option {
+    background-color: var(--background-color);
+    border-radius: var(--border-radius);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    cursor: pointer;
+    transition: var(--transition);
+    text-align: center;
+}
+
+.health-option:hover {
+    background-color: var(--primary-light);
+    transform: translateY(-5px);
+}
+
+.health-option-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: var(--primary-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 1.5rem;
+}
+
+/* Health Diary Styles */
+.health-diary-options {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.health-diary-option {
+    background-color: var(--background-color);
+    border-radius: var(--border-radius);
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.health-diary-option:hover {
+    background-color: var(--primary-light);
+    transform: translateY(-2px);
+}
+
+.health-option-info {
+    flex-grow: 1;
+}
+
+.health-option-info h3 {
+    margin-bottom: 5px;
+    font-size: 1.1rem;
+}
+
+.health-option-info p {
+    color: var(--text-light);
+    font-size: 0.9rem;
+}
+
+/* Medication Styles */
+.medication-list {
+    margin-bottom: 20px;
+}
+
+.medication-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.icon-button {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-color: var(--background-color);
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.icon-button:hover {
+    background-color: var(--border-color);
+}
+
+.delete-btn:hover {
+    background-color: rgba(231, 76, 60, 0.2);
+    color: var(--danger-color);
+}
+
+.input-with-button {
+    display: flex;
+    gap: 10px;
+}
+
+.input-with-button input {
+    flex-grow: 1;
+}
+
+/* Vaccine Styles */
+.vaccine-list {
+    margin-bottom: 20px;
+}
+
+.vaccine-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.vaccine-item h4 {
+    margin-bottom: 5px;
+}
+
+.vaccine-item p {
+    color: var(--text-light);
+    font-size: 0.9rem;
+}
+
+/* Exam Styles */
+.exam-list {
+    margin-bottom: 20px;
+}
+
+.exam-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.exam-item h4 {
+    margin-bottom: 5px;
+}
+
+.exam-item p {
+    color: var(--text-light);
+    font-size: 0.9rem;
+}
+
+/* Ajustes para o formulário de pressão */
+#pressureGroup label {
+    display: block;
+    margin-bottom: 8px;
+    margin-top: 10px;
+}
+
+#pressureGroup input {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+/* Incorporated Profile Banner */
+.incorporated-profile-banner {
+    background-color: var(--vivest-color);
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    display: none;
+}
+
+.incorporated-profile-banner.active {
+    display: block;
+    animation: fadeIn 0.3s ease;
+}
+
+.incorporated-profile-banner span {
+    font-weight: 500;
+}
+
+.return-profile-btn {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 5px 15px;
+    margin-left: 10px;
+    cursor: pointer;
+    transition: var(--transition);
+    font-size: 0.8rem;
+}
+
+.return-profile-btn:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+/* Remover o botão de pontos da barra de navegação */
+#pointsBtn {
+    display: none;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 380px) {
+    .procedure-options {
+        flex-direction: column;
+    }
+    
+    .form-actions {
+        flex-direction: column;
+    }
+    
+    .form-actions button {
+        width: 100%;
+    }
+    
+    .health-options {
+        grid-template-columns: 1fr;
+    }
+}

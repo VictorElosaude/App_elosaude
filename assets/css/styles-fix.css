@@ -1,0 +1,85 @@
+.health-diary-options {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.health-diary-option {
+    background-color: var(--background-color);
+    border-radius: var(--border-radius);
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.health-diary-option:hover {
+    background-color: var(--primary-light);
+    transform: translateY(-2px);
+}
+
+.health-option-info {
+    flex-grow: 1;
+}
+
+.health-option-info h3 {
+    margin-bottom: 5px;
+    font-size: 1.1rem;
+}
+
+.health-option-info p {
+    color: var(--text-light);
+    font-size: 0.9rem;
+}
+
+/* Ajustes para o formulário de pressão */
+#pressureGroup label {
+    display: block;
+    margin-bottom: 8px;
+    margin-top: 10px;
+}
+
+#pressureGroup input {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+/* Ajustes para garantir que o conteúdo não estoure */
+.app-container {
+    max-width: 480px;
+    margin: 0 auto;
+    min-height: 100vh;
+    position: relative;
+    background-color: var(--background-color);
+    padding-bottom: 70px; /* Espaço para a barra de navegação */
+    overflow-x: hidden;
+}
+
+.modal-content {
+    max-height: 85vh;
+    overflow-y: auto;
+}
+
+/* Ajustes para a barra de navegação */
+.nav-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: var(--card-color);
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 0;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 100;
+    max-width: 480px;
+    margin: 0 auto;
+}
+
+/* Remover o botão de pontos da barra de navegação */
+#pointsBtn {
+    display: none;
+}
